@@ -1,19 +1,17 @@
+import React, { useEffect } from 'react';
+import { authModalState } from '@/src/atoms/authModalAtom';
 import {
-  useDisclosure,
-  Button,
+  Flex,
   Modal,
-  ModalOverlay,
+  ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  Flex,
+  ModalOverlay,
   Text,
 } from '@chakra-ui/react';
-import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useRecoilState } from 'recoil';
-import { authModalState } from '@/src/atoms/authModalAtom';
 import { auth } from '../../../firebase/clientApp';
 import AuthInputs from './AuthInputs';
 import OAuthButtons from './OAuthButtons';
