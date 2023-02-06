@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
           alt='Reddit Logo-Face'
         />
         <Image
-          src='images/redditText.svg'
+          src='/images/redditText.svg'
           height='46px'
           display={{ base: 'none', md: 'unset' }}
           alt='Reddit Logo-Text'
