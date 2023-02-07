@@ -52,6 +52,7 @@ const Login: React.FC<LoginProps> = () => {
           border: '1px solid',
           borderColor: 'blue.500',
         }}
+        _focusVisible={{}}
         bg='gray.50'
       />
       <Input
@@ -74,6 +75,7 @@ const Login: React.FC<LoginProps> = () => {
           border: '1px solid',
           borderColor: 'blue.500',
         }}
+        _focusVisible={{}}
         bg='gray.50'
       />
       <Text textAlign='center' color='red' fontSize='10pt'>

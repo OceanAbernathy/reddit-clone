@@ -75,6 +75,7 @@ const SignUp: React.FC = () => {
           border: '1px solid',
           borderColor: 'blue.500',
         }}
+        _focusVisible={{}}
         bg='gray.50'
       />
       <Input
@@ -97,6 +98,7 @@ const SignUp: React.FC = () => {
           border: '1px solid',
           borderColor: 'blue.500',
         }}
+        _focusVisible={{}}
         bg='gray.50'
       />
       <Input
@@ -119,6 +121,7 @@ const SignUp: React.FC = () => {
           border: '1px solid',
           borderColor: 'blue.500',
         }}
+        _focusVisible={{}}
         bg='gray.50'
       />
       <Text textAlign='center' color='red' fontSize='10pt'>

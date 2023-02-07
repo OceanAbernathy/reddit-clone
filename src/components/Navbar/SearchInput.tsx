@@ -24,6 +24,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ user }) => {
             border: '1px solid',
             borderColor: 'blue.500',
           }}
+          _focusVisible={{}}
           height='34px'
           bg='gray.50'
         />
