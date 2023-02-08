@@ -50,6 +50,7 @@ const CreatePostLink: React.FC = () => {
           border: '1px solid',
           borderColor: 'blue.500',
         }}
+        _focusVisible={{}}
         bg='gray.50'
         borderColor='gray.200'
         height='36px'
