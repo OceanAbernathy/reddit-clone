@@ -13,7 +13,6 @@ const SubmitPostPage: React.FC = () => {
   const [user] = useAuthState(auth);
   // const communityStateValue = useRecoilValue(CommunityState);
   const { communityStateValue } = useCommunityData();
-  console.log('COMMUNITY', communityStateValue);
   return (
     <PageContent>
       <>

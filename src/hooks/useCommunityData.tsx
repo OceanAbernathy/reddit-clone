@@ -112,7 +112,7 @@ const useCommunityData = () => {
 
       // deleting the community snippet from user
       batch.delete(
-        doc(firestore, `users/${user?.uid}/communitySnipets`, communityId)
+        doc(firestore, `users/${user?.uid}/communitySnippets`, communityId)
       );
 
       // updating the numberOfMembers (-1)
