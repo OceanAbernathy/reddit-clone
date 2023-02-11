@@ -1,21 +1,11 @@
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-  Flex,
-  Icon,
-  Text,
-} from '@chakra-ui/react';
+import { Alert, AlertIcon, Flex, Icon, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { BiPoll } from 'react-icons/bi';
 import { BsLink45Deg, BsMic } from 'react-icons/bs';
 import { IoDocumentText, IoImageOutline } from 'react-icons/io5';
-import { AiFillCloseCircle } from 'react-icons/ai';
-import TabItem from './TabItem';
-import TextInputs from './PostForm/TextInputs';
-import ImageUpload from './PostForm/ImageUpload';
-import { Post } from '../../atoms/postsAtom';
+import TextInputs from './TextInputs';
+import ImageUpload from './ImageUpload';
+import { Post } from '../../../atoms/postsAtom';
 import { User } from 'firebase/auth';
 import { useRouter } from 'next/router';
 import {
@@ -25,16 +15,14 @@ import {
   Timestamp,
   updateDoc,
 } from 'firebase/firestore';
-import { firestore, storage } from '../../firebase/clientApp';
+import { firestore, storage } from '../../../firebase/clientApp';
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
-import useSelectFile from '../../hooks/useSelectFile';
+import useSelectFile from '../../../hooks/useSelectFile';
+// import TabItem from './TabItem';
 
-type NewPostFormProps = {
-  user: User;
-  communityImageURL?: string;
-};
+let TabItemm: any = require('./TabItem');
 
-const formTabs: TabItem[] = [
+const formTabs = [
   {
     title: 'Post',
     icon: IoDocumentText,
@@ -57,9 +45,14 @@ const formTabs: TabItem[] = [
   },
 ];
 
-export type TabItem = {
+export type TabItemm = {
   title: string;
   icon: typeof Icon.arguments;
+};
+
+type NewPostFormProps = {
+  user: User;
+  communityImageURL?: string;
 };
 
 const NewPostForm: React.FC<NewPostFormProps> = ({
@@ -133,9 +126,9 @@ const NewPostForm: React.FC<NewPostFormProps> = ({
   return (
     <Flex direction='column' bg='white' borderRadius={4} mt={2}>
       <Flex width='100%'>
-        {formTabs.map((item) => (
-          <TabItem
-            key={item.title}
+        {formTabs.map((item, index) => (
+          <TabItemm
+            key={index}
             item={item}
             selected={item.title === selectedTab}
             setSelectedTab={setSelectedTab}

@@ -2,7 +2,7 @@ import { Box, Text } from '@chakra-ui/react';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import PageContent from '../../../components/Layout/PageContent';
-import NewPostForm from '../../../components/Posts/NewPostForm';
+import NewPostForm from '../../../components/Posts/PostForm/NewPostForm';
 import { auth } from '../../../firebase/clientApp';
 import { useRecoilValue } from 'recoil';
 import { CommunityState } from '../../../atoms/communitiesAtom';

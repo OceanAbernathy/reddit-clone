@@ -32,6 +32,13 @@ const AuthModal: React.FC = () => {
     if (user) handleClose();
   }, [user]);
 
+  const toggleView = (view: string) => {
+    setModalState({
+      ...modalState,
+      view: view as typeof modalState.view,
+    });
+  };
+
   return (
     <>
       <Modal isOpen={modalState.open} onClose={handleClose}>
@@ -65,7 +72,7 @@ const AuthModal: React.FC = () => {
                   <AuthInputs />
                 </>
               ) : (
-                <ResetPassword />
+                <ResetPassword toggleView={toggleView} />
               )}
             </Flex>
           </ModalBody>

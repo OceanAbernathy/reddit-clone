@@ -26,7 +26,6 @@ const Header: React.FC<HeaderProps> = ({ communityData }) => {
               borderRadius='full'
               boxSize='66px'
               src={communityStateValue.currentCommunity.imageURL}
-              alt='Community Image'
               position='relative'
               top={-3}
               color='blue.500'

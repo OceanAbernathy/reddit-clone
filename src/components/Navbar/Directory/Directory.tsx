@@ -9,7 +9,6 @@ import {
   MenuList,
   Text,
 } from '@chakra-ui/react';
-import { TiHome } from 'react-icons/ti';
 import Communities from './Communities';
 import useDirectory from '../../../hooks/useDirectory';
 
