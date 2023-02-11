@@ -37,7 +37,6 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
         id: doc.id,
         ...doc.data(),
       })) as Community[];
-      console.log('HERE ARE COMS', communities);
 
       setCommunities(communities);
     } catch (error: any) {
@@ -142,6 +141,7 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
                         fontSize='8pt'
                         onClick={(event) => {
                           event.stopPropagation();
+                          console.log('hello');
                           onJoinOrLeaveCommunity(item, isJoined);
                         }}
                         variant={isJoined ? 'outline' : 'solid'}
