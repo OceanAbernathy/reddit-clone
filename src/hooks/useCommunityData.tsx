@@ -31,7 +31,10 @@ const useCommunityData = () => {
     communityData: Community,
     isJoined: boolean
   ) => {
+    // is the user signed in?
+    // if not => open auth modal
     if (!user) {
+      // open modal
       setAuthModalState({ open: true, view: 'login' });
       return;
     }
@@ -47,6 +50,7 @@ const useCommunityData = () => {
   const getMySnippets = async () => {
     setLoading(true);
     try {
+      // get users snippets
       const snippetDocs = await getDocs(
         collection(firestore, `users/${user?.uid}/communitySnippets`)
       );
@@ -55,6 +59,7 @@ const useCommunityData = () => {
       setCommunityStateValue((prev) => ({
         ...prev,
         mySnippets: snippets as CommunitySnippet[],
+        snippetsFetched: true,
       }));
     } catch (error: any) {
       setError(error.message);
@@ -152,6 +157,7 @@ const useCommunityData = () => {
       setCommunityStateValue((prev) => ({
         ...prev,
         postVotes: [],
+        snippetsFetched: false,
       }));
       return;
     }
