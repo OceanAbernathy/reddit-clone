@@ -17,9 +17,7 @@ import { Community } from '../../atoms/communitiesAtom';
 import { firestore } from '../../firebase/clientApp';
 import useCommunityData from '../../hooks/useCommunityData';
 
-type RecommendationsProps = {};
-
-const Recommendations: React.FC<RecommendationsProps> = () => {
+const Recommendations: React.FC = () => {
   const [communities, setCommunities] = useState<Community[]>([]);
   const [loading, setLoading] = useState(false);
   const { communityStateValue, onJoinOrLeaveCommunity } = useCommunityData();

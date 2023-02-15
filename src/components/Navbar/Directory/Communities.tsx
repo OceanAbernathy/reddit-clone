@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import CreateCommunityModal from '../../Modal/CreateCommunity/CreateCommunityModal';
 import { GrAdd } from 'react-icons/gr';
 import { useRecoilValue } from 'recoil';
-import { CommunityState } from '../../../atoms/communitiesAtom';
+import { communityState } from '../../../atoms/communitiesAtom';
 import MenuListItem from './MenuListItem';
 import { FaReddit } from 'react-icons/fa';
 
@@ -11,7 +11,7 @@ type CommunitiesProps = {};
 
 const Communities: React.FC<CommunitiesProps> = () => {
   const [open, setOpen] = useState(false);
-  const mySnippets = useRecoilValue(CommunityState).mySnippets;
+  const mySnippets = useRecoilValue(communityState).mySnippets;
 
   return (
     <>

@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { RiCakeLine } from 'react-icons/ri';
-import { Community, CommunityState } from '../../atoms/communitiesAtom';
+import { Community, communityState } from '../../atoms/communitiesAtom';
 import moment from 'moment';
 import Link from 'next/link';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -32,7 +32,7 @@ const About: React.FC<AboutProps> = ({ communityData }) => {
   const selectedFileRef = useRef<HTMLInputElement>(null);
   const { selectedFile, setSelectedFile, onSelectFile } = useSelectFile();
   const [uploadingImage, setUploadingImage] = useState(false);
-  const setCommunityStateValue = useSetRecoilState(CommunityState);
+  const setCommunityStateValue = useSetRecoilState(communityState);
 
   const onUpdateImage = async () => {
     if (!selectedFile) return;

@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { FaReddit } from 'react-icons/fa';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { CommunityState } from '../atoms/communitiesAtom';
+import { communityState } from '../atoms/communitiesAtom';
 import {
   directoryMenuState,
   DirectoryMenuItem,
@@ -12,7 +12,7 @@ const useDirectory = () => {
   const [directoryState, setDirectoryState] =
     useRecoilState(directoryMenuState);
   const router = useRouter();
-  const communityStateValue = useRecoilValue(CommunityState);
+  const communityStateValue = useRecoilValue(communityState);
 
   const onSelectMenuItem = (menuItem: DirectoryMenuItem) => {
     setDirectoryState((prev) => ({

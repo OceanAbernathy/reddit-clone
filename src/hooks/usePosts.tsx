@@ -13,7 +13,7 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { Post, postState, PostVote } from '../atoms/postsAtom';
 import { auth, firestore, storage } from '../firebase/clientApp';
 import { useEffect } from 'react';
-import { CommunityState } from '../atoms/communitiesAtom';
+import { communityState } from '../atoms/communitiesAtom';
 import { authModalState } from '../atoms/authModalAtom';
 import { useRouter } from 'next/router';
 
@@ -21,7 +21,7 @@ const usePosts = () => {
   const [user] = useAuthState(auth);
   const router = useRouter();
   const [postStateValue, setPostStateValue] = useRecoilState(postState);
-  const currentCommunity = useRecoilValue(CommunityState).currentCommunity;
+  const currentCommunity = useRecoilValue(communityState).currentCommunity;
   const setAuthModalState = useSetRecoilState(authModalState);
 
   const onVote = async (

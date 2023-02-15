@@ -18,11 +18,9 @@ import {
 import { firestore, storage } from '../../../firebase/clientApp';
 import { getDownloadURL, ref, uploadString } from 'firebase/storage';
 import useSelectFile from '../../../hooks/useSelectFile';
-// import TabItem from './TabItem';
+import TabItem from './TabItems';
 
-let TabItemm: any = require('./TabItem');
-
-const formTabs = [
+const formTabs: TabItem[] = [
   {
     title: 'Post',
     icon: IoDocumentText,
@@ -45,7 +43,7 @@ const formTabs = [
   },
 ];
 
-export type TabItemm = {
+export type TabItem = {
   title: string;
   icon: typeof Icon.arguments;
 };
@@ -53,11 +51,13 @@ export type TabItemm = {
 type NewPostFormProps = {
   user: User;
   communityImageURL?: string;
+  communityId?: string;
 };
 
 const NewPostForm: React.FC<NewPostFormProps> = ({
   user,
   communityImageURL,
+  communityId,
 }) => {
   const router = useRouter();
   const [selectedTab, setSelectedTab] = useState(formTabs[0].title);
@@ -127,7 +127,7 @@ const NewPostForm: React.FC<NewPostFormProps> = ({
     <Flex direction='column' bg='white' borderRadius={4} mt={2}>
       <Flex width='100%'>
         {formTabs.map((item, index) => (
-          <TabItemm
+          <TabItem
             key={index}
             item={item}
             selected={item.title === selectedTab}

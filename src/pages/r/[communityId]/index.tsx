@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { GetServerSidePropsContext } from 'next';
 import { firestore } from '../../../firebase/clientApp';
-import { Community, CommunityState } from '../../../atoms/communitiesAtom';
+import { Community, communityState } from '../../../atoms/communitiesAtom';
 import safeJsonStringify from 'safe-json-stringify';
 import NotFound from '../../../components/Community/NotFound';
 import Header from '../../../components/Community/Header';
@@ -17,7 +17,7 @@ type CommunityPageProps = {
 };
 
 const CommunityPage: React.FC<CommunityPageProps> = ({ communityData }) => {
-  const setCommunityStateValue = useSetRecoilState(CommunityState);
+  const setCommunityStateValue = useSetRecoilState(communityState);
 
   useEffect(() => {
     setCommunityStateValue((prev) => ({

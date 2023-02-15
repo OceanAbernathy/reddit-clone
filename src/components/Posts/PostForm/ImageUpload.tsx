@@ -57,7 +57,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
             hidden
             onChange={onSelectImage}
           />
-          <img src={selectedFile} />
+          <Image src={selectedFile} />
         </Flex>
       )}
     </Flex>

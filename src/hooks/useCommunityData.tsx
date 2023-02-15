@@ -14,7 +14,7 @@ import { authModalState } from '../atoms/authModalAtom';
 import {
   Community,
   CommunitySnippet,
-  CommunityState,
+  communityState,
 } from '../atoms/communitiesAtom';
 import { auth, firestore } from '../firebase/clientApp';
 
@@ -22,7 +22,7 @@ const useCommunityData = () => {
   const [user] = useAuthState(auth);
   const router = useRouter();
   const [communityStateValue, setCommunityStateValue] =
-    useRecoilState(CommunityState);
+    useRecoilState(communityState);
   const setAuthModalState = useSetRecoilState(authModalState);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');

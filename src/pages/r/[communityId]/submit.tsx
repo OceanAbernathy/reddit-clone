@@ -5,7 +5,7 @@ import PageContent from '../../../components/Layout/PageContent';
 import NewPostForm from '../../../components/Posts/PostForm/NewPostForm';
 import { auth } from '../../../firebase/clientApp';
 import { useRecoilValue } from 'recoil';
-import { CommunityState } from '../../../atoms/communitiesAtom';
+import { communityState } from '../../../atoms/communitiesAtom';
 import useCommunityData from '../../../hooks/useCommunityData';
 import About from '../../../components/Community/About';
 

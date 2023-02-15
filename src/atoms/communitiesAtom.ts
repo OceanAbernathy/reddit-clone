@@ -27,7 +27,7 @@ const defaultCommunityState: CommunityState = {
   snippetsFetched: false,
 };
 
-export const CommunityState = atom<CommunityState>({
+export const communityState = atom<CommunityState>({
   key: 'communitiesState',
   default: defaultCommunityState,
 });
